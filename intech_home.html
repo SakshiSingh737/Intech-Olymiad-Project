@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ecommerce Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .z{
+height: 35px;
+width: 255px;
+border-radius:20px;
+border-left-style: solid;
+border-left-color: #ffffff;
+ border-bottom-color: #ffffff;
+}
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+   .shiftt{margin-left:45px}
+	.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+	
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+.but {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.more-products {
+    padding-top: 40px;
+    text-align: center
+}
+.more-products span {
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    font-size: 107.69231%;
+    line-height: 121.42857%;
+    font-family: "montserratbold", sans-serif;
+    -moz-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    border-radius: 26px;
+    -moz-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    -webkit-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    background-color: #086fcf;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 16px 26px
+}
+.more-products span:hover {
+    background-color: #0084ff
+}
+.more-products.hidden {
+    display: none
+}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+.footer #button{
+	width:35px;
+	height:35px;
+	border: #727172 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer #button:hover{
+	width:35px;
+	height:35px;
+	border: #3A3A3A 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 10em;
+}
+.footer #container{
+	margin-top:5px;
+	width:100%;
+height:100%;
+  position:relative;
+  top:0;
+  left:0;
+	background: #3A3A3A;
+}
+.footer #cont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footer_center{
+	width:500px;
+	float:left;
+  text-align:center;
+}
+.footer h5{
+	font-family: 'Helvetica';
+	font-size: 16px;
+	font-weight: 100;
+	margin-top:70px;
+	margin-left:40px;
+}
+  
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body style="background-color:#f2f2f2">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul style="position:relative;display:inline;" class="nav navbar-nav navbar-right">
+ <li>   <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search By Brand, Products..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>        
+        </div>
+      </form></li>
+        <li class="active"><a href="#"><b>Home</b></a></li>
+        <li><a href="#"><b>About</b></a></li>
+       
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="font-size:20px"></span><span class="badge badge-pill badge-info" style="color:#ff8080">0</span></a></li>
+        <li><a href="intech_login.html"><span class="glyphicon glyphicon-log-in"></span> <b>Login</b></a></li>
+		
+       </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br>
+
+   <div class="row">
+   <div class="but">
+<div class="btn-group btn-group-justified">
+  <a href="#" class="btn btn-default" >Mobile Phones</a>
+  <a href="#" class="btn btn-default">Computer & Laptop</a>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Other Devices <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#">Digital Cameras</a></li>
+      <li><a href="#">Smart Watches</a></li>
+	  <li><a href="#">Printer</a></li>
+	  <li><a href="#">HeadSets</a></li>
+	  <li><a href="#">Echo</a></li>
+	  <li><a href="#">Fire TV</a></li>
+	  <li><a href="#">Kindle</a></li>
+	  <li><a href="#">Mobile Accessories</a></li>
+	  <li><a href="#">Laptop Accessories</a></li>
+    </ul>
+  </div>
+</div>
+ </div>
+ <br>
+<div class="row" style="background-color: white"><br>
+		<div class="col-md-3" style="background-color: #f2f2f2">
+			<div style="background-color: #f2f2f2" align="center"><h2>FILTERS</h2></div>
+             <div style="background-color: #f2f2f2" align="center">
+			<select name = "Subjects" class="z">
+                 <option value="-1">Price</option>
+<option value="p1">Rs 5000-10000 </option>
+<option value="p2">Rs 10000-15000</option>
+<option value="p3">Rs 15000-20000</option>
+<option value="p4">more than 20000</option></select></div><br>
+
+<div style="background-color:#f2f2f2" align="center">
+			<select name = "Subjects" class="z">
+                 <option value="-1">Loaction</option>
+<option value="l1">Delhi</option>
+<option value="l2">Mumbai</option>
+<option value="l3">Lucknow</option>
+<option value="l4">Kanpur</option></select></div><br>
+
+<div style="background-color:#f2f2f2" align="center">
+<a href="#"><span class="glyphicon glyphicon-user" style="color:black;font-size:20px"></span><span style="color:black;font-size:20px">  My Account</span></a>
+<br><br>
+<p>New Customer? Start here.</p><a href="intech_signup.html"><input type="button" value="Sign in" style="width:200px"></a>
+<br><br>
+<a href="#"><p>Privacy Policy</p></a>
+<a href="#"><p>FAQ & Help</p></a>
+<a href="#"><p>About Us</p></a>
+</div>
+		</div>
+
+	<div class="row">
+<div class="col-sm-8">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+	  <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+	  <a href="#">
+        <img src="imgs/9.jpg" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+		
+          <h3>Offers of the Week</h3>
+          <p>Money Money..</p>
+        </div>      
+      </div>
+
+      <div class="item">
+         <a href="#"><img src="imgs/10.jpg" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+          <h3>Trending Offers</h3>
+          <p>By Intech...</p>
+        </div>      
+      </div>
+    
+	
+	 <div class="item">
+         <a href="#"><img src="imgs/11.jpg" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+          <h3>Diwali Dhamaka</h3>
+          <p>more to go..</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+  </div></div>
+ <hr style="border-width:3px; color:gray">
+ 
+   <div class="row">
+<div class="container text-center">    
+    <h3><u>***SHOP-BY-TOP BRANDS***</u></h3><br>
+  <div class="row">
+  <div class="shiftt">
+    <div class="col-sm-2 col-md-2 col-xs-4">
+      <img src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-black.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
+      <p>Apple</p>
+    </div>
+	
+	
+    <div class="col-sm-2 col-md-2 col-xs-4"> 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg" class="img-responsive" style="width:100%; height:150px" alt="Image">
+      <p>Sony</p>    
+    </div>
+	
+	<div class="col-sm-2 col-md-2 col-xs-4"> 
+      <img src="http://logok.org/wp-content/uploads/2014/05/Dell-logo-old.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
+      <p>Dell</p>    
+    </div>
+    <div class="col-sm-2 col-md-2 col-xs-4"> 
+      <img src="http://www.acs.ie/wp-content/uploads/2017/04/Samsung-logo-monitor.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
+      <p>Samsung</p>    
+    </div>
+	<div class="col-sm-2 col-md-2 col-xs-4"> 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Epson_logo.svg" class="img-responsive" style="width:100%; height:150px" alt="Image"> 
+      <p>Epson</p>    
+    </div>
+	
+  </div>
+</div></div></div>
+
+<hr>
+ <div class="row">
+<div class="container text-center">    
+  <h3><u>***WHATS-TRENDING***</u></h3><br>
+  <div class="row">
+    <div class="card">
+	 <div class="col-lg-3 col-md-3 col-xl-3">
+  <img src="jeans3.jpg" alt="Product" style="width:100%">
+  <h5>Smart Phones</h5>
+  <p class="price">Rs.....</p>
+  <p>Some text.......</p>
+  <p><button>Add to Cart</button></p>
+</div></div>
+	 <div class="card">
+	 <div class="col-lg-3 col-md-3 col-xl-3">
+  <img src="jeans3.jpg" alt="Product" style="width:100%">
+  <h5>Smart Phones</h5>
+  <p class="price">Rs.......</p>
+  <p>Some text.....</p>
+  <p><button>Add to Cart</button></p>
+</div>
+</div>
+	 <div class="card">
+	 <div class="col-lg-3 col-md-3 col-xl-3">
+  <img src="jeans3.jpg" alt="Product" style="width:100%">
+  <h5>Smart Phones</h5>
+  <p class="price">Rs.......</p>
+  <p>Some text.....</p>
+  <p><button>Add to Cart</button></p>
+</div></div>
+	<div class="card">
+	<div class="col-lg-3 col-md-3 col-xl-3">
+  <img src="jeans3.jpg" alt="Product" style="width:100%">
+  <h5>Smart Phones</h5>
+  <p class="price">Rs.......</p>
+  <p>Some text.....</p>
+  <p><button>Add to Cart</button></p>
+</div></div>
+  
+</div></div>
+
+</div><br>
+<div class="more-products" id="more-products-wrap">
+          <span id="more-products" data-rows_per_page="1">More products</span>
+        </div><br><br><br><br><br>
+</body>
+<div class="footer">
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+	  <h5 style="color:white">Contact Us | Support | copyright &copy; 2018, Intech Olympiad</h5>
+</div>
+</div>
+</div>
+</div>
+
+
+</html>
