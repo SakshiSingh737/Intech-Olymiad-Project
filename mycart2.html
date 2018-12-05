@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My Cart</title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	.shopping-cart {width: 100%; border-top: 1px solid #C3C3C3; border-right: 1px solid #C3C3C3; clear: both;}
+.shopping-cart th {background: #F0F0F0;}
+.shopping-cart th, .shopping-cart td {border-bottom: 1px solid #C3C3C3; border-left: 1px solid #C3C3C3; padding: 3px;}
+.shopping-cart .link {font-size: 90%; white-space: nowrap;}
+.shopping-cart .product {width: 55%}
+.shopping-cart .price {width: 5%;}
+.shopping-cart .quantity {width: 15%;}
+.shopping-cart .quantity input {width: 30px;}
+.shopping-cart .price {width: 20%;}
+.shopping-cart .product-img {border: 1px solid #ccc; background-color: #e9e9e9; padding: 3px; width: 80px; height: 80px; float: left;}
+.shopping-cart .product-img img {max-width:80px;max-height:80px;width:auto;height:auto;}
+.shopping-cart .product-name {margin-left: 100px;}
+.shopping-cart tr.totals {font-weight: bold;}
+.shopping-cart tr.totals a {font-weight: normal;}
+.shopping-cart .quantity-span {text-align: right;}
+.coupon {margin:30px 10px 20px; margin-right:20px;text-align:right;}
+.continue-shopping {float:left;margin:20px 0;}
+.checkout-button {float: right; margin: 20px 0; margin-right:20px; font-weight: bold;}
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+.footer #button{
+	width:35px;
+	height:35px;
+	border: #727172 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer #button:hover{
+	width:35px;
+	height:35px;
+	border: #3A3A3A 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 10em;
+}
+.footer #container{
+	margin-top:5px;
+	width:100%;
+height:100%;
+  position:relative;
+  top:0;
+  left:0;
+	background: #3A3A3A;
+}
+.footer #cont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footer_center{
+	width:500px;
+	float:left;
+  text-align:center;
+}
+.footer h5{
+	font-family: 'Helvetica';
+	font-size: 16px;
+	font-weight: 100;
+	margin-top:70px;
+	margin-left:40px;
+}
+	
+	</style>
+  </head>
+  <body>
+
+<h1>Shopping Cart</h1>
+<br><br>
+  <table cellspacing="0" class="shopping-cart">
+    <thead>
+      <tr class="headings">
+        <th class="link">&nbsp;</td>
+        <th class="product">Item</td>
+        <th class="price">Price</td>
+        <th class="quantity">Quantity</td>
+        <th class="price">Total</td>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr> 
+        <td class="link"><label> remove</label></td>
+        <td class="product">
+          <div class="product-img"><a href="{#product.url}"></a></div>
+          <div class="product-name">
+            <a href="{#product.url}">Product name</a>
+            
+              <br />
+        
+          </div>
+        </td>
+        <td class="price">
+           1200000000000
+        </td>
+        <td class="quantity">
+         
+        </td>
+        <td class="price">totalprice</td>
+      </tr>
+      <tr>
+        <td class="quantity-span" colspan="4">Subtotal</td>
+        <td class="price">cartTotalBeforeDiscounts</td>
+      </tr>
+     
+        <tr>
+          <td class="quantity-span" colspan="4">coupon.name or coupon.code</td>
+          <td class="price">-Coupon.Savings</td>
+        </tr>
+ 
+      <tr class="totals">
+        <td colspan="2"><input type="submit" name="submit" value="Update cart" /></td>
+        <td class="quantity-span" colspan="2">Total</td>
+        <td class="price">cartTotal.value</td>
+      </tr> 
+    </tbody>
+  </table>
+  <div class="coupon">
+    Have a coupon?  <input type="submit" value="Apply" />
+  </div>
+
+<div style="clear: both;"></div>
+<a href="{#cart.urls.continueShopping}" class="continue-shopping"> < Continue Shopping</a>
+<a href="{#cart.urls.checkout}" class="checkout-button"><h4>Checkout >>></h4></a>
+  </body>
+  
+<div class="footer">
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+	  <h5 style="color:white">Contact Us | Support | copyright &copy; 2018, Intech Olympiad</h5>
+</div>
+</div>
+</div>
+</div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	
+
+</html>
