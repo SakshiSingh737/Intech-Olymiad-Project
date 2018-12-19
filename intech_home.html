@@ -1,13 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Ecommerce Homepage</title>
-  <meta charset="utf-8">
+<html>
+ <title>Ecommerce Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   .z{
 height: 35px;
 width: 255px;
@@ -34,22 +42,39 @@ border-left-color: #ffffff;
   font-size: 22px;
 }
 
-.card button {
-  border: none;
+button {
+  border-radius:20px;
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: gray;
   text-align: center;
   cursor: pointer;
   width: 100%;
   font-size: 18px;
 }
 
-.card button:hover {
+button:hover {
   opacity: 0.7;
 }
-	
+
+	.buttons {
+	border-radius:2px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 35%;
+  font-size: 18px;
+  margin-left:32%;
+}
+
+.buttons:hover {
+  opacity: 0.7;
+}
+
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
@@ -168,106 +193,108 @@ height:100%;
 	margin-top:70px;
 	margin-left:40px;
 }
-  
+  /* Active/current link */
+.active {
+  background-color: #000;
+  color: white;
+}
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; 
     }
   }
-  </style>
-</head>
-<body style="background-color:#f2f2f2">
+</style>
+<body class="w3-content" style="max-width:1200px">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul style="position:relative;display:inline;" class="nav navbar-nav navbar-right">
- <li>   <form class="navbar-form navbar-right" role="search">
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search By Brand, Products..">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>        
-        </div>
-      </form></li>
-        <li class="active"><a href="#"><b>Home</b></a></li>
-        <li><a href="#"><b>About</b></a></li>
-       
-      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="font-size:20px"></span><span class="badge badge-pill badge-info" style="color:#ff8080">0</span></a></li>
-        <li><a href="intech_login.html"><span class="glyphicon glyphicon-log-in"></span> <b>Login</b></a></li>
-		
-       </ul>
-    </div>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>LOGO</b></h3>
   </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Mobile Phones</a>
+    <a href="#" class="w3-bar-item w3-button">Computer Accessories</a>
+    <a onclick="myAccFuncP()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Price <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccP" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Rs.1000-5000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.5000-Rs.10000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.10000-Rs.20000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.20000-Rs.30000</a>
+	        <a href="#" class="w3-bar-item w3-button">Rs.30000-Rs.50000</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+	 <a onclick="myAccFuncB()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Brand <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccB" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>SAMSUNG</a>
+      <a href="#" class="w3-bar-item w3-button">SONY</a>
+      <a href="#" class="w3-bar-item w3-button">APPLE</a>
+      <a href="#" class="w3-bar-item w3-button">MICROMAX</a>
+	        <a href="#" class="w3-bar-item w3-button">PANASONIC</a>
+			 <a href="#" class="w3-bar-item w3-button">LG</a>
+			  <a href="#" class="w3-bar-item w3-button">BPL</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+	 <a onclick="myAccFuncO()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Other Devices <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccO" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Digital Cameras</a>
+      <a href="#" class="w3-bar-item w3-button">Smart Watches</a>
+      <a href="#" class="w3-bar-item w3-button">Printer</a>
+      <a href="#" class="w3-bar-item w3-button">HeadSets</a>
+	        <a href="#" class="w3-bar-item w3-button">Echo</a>
+			 <a href="#" class="w3-bar-item w3-button">Fire TV</a>
+			  <a href="#" class="w3-bar-item w3-button">Kindle</a>
+			  <a href="#" class="w3-bar-item w3-button">Mobile Accessories</a>
+			  <a href="#" class="w3-bar-item w3-button">Laptop Accessories</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Location</a>
+    
+  </div>
+  <a href="#"><span class="glyphicon glyphicon-user" style="color:#0b7dda;font-size:20px"></span><span><b> MY ACCOUNT</b></span></a> 
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Privacy Policy</a>
 </nav>
-<br><br><br>
 
-   <div class="row">
-   <div class="but">
-<div class="btn-group btn-group-justified">
-  <a href="#" class="btn btn-default" >Mobile Phones</a>
-  <a href="#" class="btn btn-default">Computer & Laptop</a>
-  <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Other Devices <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Digital Cameras</a></li>
-      <li><a href="#">Smart Watches</a></li>
-	  <li><a href="#">Printer</a></li>
-	  <li><a href="#">HeadSets</a></li>
-	  <li><a href="#">Echo</a></li>
-	  <li><a href="#">Fire TV</a></li>
-	  <li><a href="#">Kindle</a></li>
-	  <li><a href="#">Mobile Accessories</a></li>
-	  <li><a href="#">Laptop Accessories</a></li>
-    </ul>
-  </div>
-</div>
- </div>
- <br>
-<div class="row" style="background-color: white"><br>
-		<div class="col-md-3" style="background-color: #f2f2f2">
-			<div style="background-color: #f2f2f2" align="center"><h2>FILTERS</h2></div>
-             <div style="background-color: #f2f2f2" align="center">
-			<select name = "Subjects" class="z">
-                 <option value="-1">Price</option>
-<option value="p1">Rs 5000-10000 </option>
-<option value="p2">Rs 10000-15000</option>
-<option value="p3">Rs 15000-20000</option>
-<option value="p4">more than 20000</option></select></div><br>
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
 
-<div style="background-color:#f2f2f2" align="center">
-			<select name = "Subjects" class="z">
-                 <option value="-1">Loaction</option>
-<option value="l1">Delhi</option>
-<option value="l2">Mumbai</option>
-<option value="l3">Lucknow</option>
-<option value="l4">Kanpur</option></select></div><br>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<div style="background-color:#f2f2f2" align="center">
-<a href="#"><span class="glyphicon glyphicon-user" style="color:black;font-size:20px"></span><span style="color:black;font-size:20px">  My Account</span></a>
-<br><br>
-<p>New Customer? Start here.</p><a href="intech_signup.html"><input type="button" value="Sign in" style="width:200px"></a>
-<br><br>
-<a href="#"><p>Privacy Policy</p></a>
-<a href="#"><p>FAQ & Help</p></a>
-<a href="#"><p>About Us</p></a>
-</div>
-		</div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
 
-	<div class="row">
-<div class="col-sm-8">
-<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  
+  <header class="w3-container w3-xlarge" style="color:#000">
+    <p class="w3-left">Electronic World</p>
+    <p class="w3-right">
+	<input type="text" class="glyphicon glyphicon-search" style="font-size:18px;width:160px;border-radius:20px" placeholder=" Search...">
+	<a class="active" href="#home" style="font-size:15px"><b>Home</b></a>
+	<a href="#" style="font-size:15px"><b>About</b></a>
+      <i class="fa fa-shopping-cart w3-margin-right"style="font-size:22px"><span class="badge badge-pill badge-info" style="color:#ff8080">0</span></i>
+	  <a href="intech_login.html"><span class="glyphicon glyphicon-log-in" style="font-size:15px"></span> <b style="font-size:15px">Login</b></a>
+      
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -315,97 +342,193 @@ height:100%;
       <span class="sr-only">Next</span>
     </a>
 </div>
-  </div></div>
- <hr style="border-width:3px; color:gray">
- 
-   <div class="row">
-<div class="container text-center">    
-    <h3><u>***SHOP-BY-TOP BRANDS***</u></h3><br>
-  <div class="row">
-  <div class="shiftt">
-    <div class="col-sm-2 col-md-2 col-xs-4">
-      <img src="http://logok.org/wp-content/uploads/2014/04/Apple-Logo-black.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
-      <p>Apple</p>
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New Products</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New Products</h1>
+      <h1 class="w3-hide-small">OFFERS 2018</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
     </div>
-	
-	
-    <div class="col-sm-2 col-md-2 col-xs-4"> 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg" class="img-responsive" style="width:100%; height:150px" alt="Image">
-      <p>Sony</p>    
-    </div>
-	
-	<div class="col-sm-2 col-md-2 col-xs-4"> 
-      <img src="http://logok.org/wp-content/uploads/2014/05/Dell-logo-old.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
-      <p>Dell</p>    
-    </div>
-    <div class="col-sm-2 col-md-2 col-xs-4"> 
-      <img src="http://www.acs.ie/wp-content/uploads/2017/04/Samsung-logo-monitor.png" class="img-responsive" style="width:100%; height:150px" alt="Image">
-      <p>Samsung</p>    
-    </div>
-	<div class="col-sm-2 col-md-2 col-xs-4"> 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Epson_logo.svg" class="img-responsive" style="width:100%; height:150px" alt="Image"> 
-      <p>Epson</p>    
-    </div>
-	
   </div>
-</div></div></div>
 
-<hr>
- <div class="row">
-<div class="container text-center">    
-  <h3><u>***WHATS-TRENDING***</u></h3><br>
-  <div class="row">
-    <div class="card">
-	 <div class="col-lg-3 col-md-3 col-xl-3">
-  <img src="jeans3.jpg" alt="Product" style="width:100%">
-  <h5>Smart Phones</h5>
-  <p class="price">Rs.....</p>
-  <p>Some text.......</p>
-  <p><button>Add to Cart</button></p>
-</div></div>
-	 <div class="card">
-	 <div class="col-lg-3 col-md-3 col-xl-3">
-  <img src="jeans3.jpg" alt="Product" style="width:100%">
-  <h5>Smart Phones</h5>
-  <p class="price">Rs.......</p>
-  <p>Some text.....</p>
-  <p><button>Add to Cart</button></p>
-</div>
-</div>
-	 <div class="card">
-	 <div class="col-lg-3 col-md-3 col-xl-3">
-  <img src="jeans3.jpg" alt="Product" style="width:100%">
-  <h5>Smart Phones</h5>
-  <p class="price">Rs.......</p>
-  <p>Some text.....</p>
-  <p><button>Add to Cart</button></p>
-</div></div>
-	<div class="card">
-	<div class="col-lg-3 col-md-3 col-xl-3">
-  <img src="jeans3.jpg" alt="Product" style="width:100%">
-  <h5>Smart Phones</h5>
-  <p class="price">Rs.......</p>
-  <p>Some text.....</p>
-  <p><button>Add to Cart</button></p>
-</div></div>
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>Shop By Trend</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+        <p class="price">Product 1<br><b>Rs.25000</b></p>
+      </div>
+	  <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+        <p class="price">imgs/12.jpg<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/12.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 3<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 4<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 5<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 6<br><b class="w3-text-red">Rs.2500</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/12.jpg" style="width:100%;height:180px">
+        <p class="price">Product 7<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 8<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="buttons"> More Products >> </button>
+ <br><br><br>
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get special offers provide E-Mail Address</p>
+    <p><input type="text" class="w3-input w3-border" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
   
-</div></div>
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
 
-</div><br>
-<div class="more-products" id="more-products-wrap">
-          <span id="more-products" data-rows_per_page="1">More products</span>
-        </div><br><br><br><br><br>
+      <div class="w3-col s4">
+        <h4><b>About</b></h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Help</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4><b>Contact</b></h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0001112222</p>
+        <p><i class="fa fa-fw fa-envelope"></i> intech@gmail.com</p>
+        <h4><b>We accept</b></h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Cash on delivery</p>
+		<p><i class="fa fa-fw fa-credit-card"></i> Debit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="#" title="Intech" target="_blank" class="w3-hover-opacity">Intech | copyright &copy; 2018, Intech Olympiad</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new products and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFuncP() {
+    var x = document.getElementById("demoAccP");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncB() {
+    var y = document.getElementById("demoAccB");
+    if (y.className.indexOf("w3-show") == -1) {
+        y.className += " w3-show";
+    } else {
+        y.className = y.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncO() {
+    var x = document.getElementById("demoAccO");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+document.getElementById("myBtn").click();
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
 </body>
-<div class="footer">
-  <div id="button"></div>
-<div id="container">
-<div id="cont">
-<div class="footer_center">
-	  <h5 style="color:white">Contact Us | Support | copyright &copy; 2018, Intech Olympiad</h5>
-</div>
-</div>
-</div>
-</div>
-
-
 </html>
