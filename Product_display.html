@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+ <title>Online Shopping</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+  .z{
+height: 35px;
+width: 255px;
+border-radius:20px;
+border-left-style: solid;
+border-left-color: #ffffff;
+ border-bottom-color: #ffffff;
+}
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+   .shiftt{margin-left:45px}
+	.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+button {
+  border-radius:20px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+	.buttons {
+	border-radius:2px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 35%;
+  font-size: 18px;
+  margin-left:32%;
+}
+
+.buttons:hover {
+  opacity: 0.7;
+}
+
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+.but {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.more-products {
+    padding-top: 40px;
+    text-align: center
+}
+.more-products span {
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    font-size: 107.69231%;
+    line-height: 121.42857%;
+    font-family: "montserratbold", sans-serif;
+    -moz-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    border-radius: 26px;
+    -moz-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    -webkit-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    background-color: #086fcf;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 16px 26px
+}
+.more-products span:hover {
+    background-color: #0084ff
+}
+.more-products.hidden {
+    display: none
+}
+
+  /* Active/current link */
+.active {
+  background-color: #000;
+  color: white;
+}
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>LOGO</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Mobile Phones</a>
+    <a href="#" class="w3-bar-item w3-button">Computer Accessories</a>
+    <a onclick="myAccFuncP()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Price <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccP" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Rs.1000-5000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.5000-Rs.10000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.10000-Rs.20000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.20000-Rs.30000</a>
+	        <a href="#" class="w3-bar-item w3-button">Rs.30000-Rs.50000</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+	 <a onclick="myAccFuncB()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Brand <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccB" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>SAMSUNG</a>
+      <a href="#" class="w3-bar-item w3-button">SONY</a>
+      <a href="#" class="w3-bar-item w3-button">APPLE</a>
+      <a href="#" class="w3-bar-item w3-button">MICROMAX</a>
+	        <a href="#" class="w3-bar-item w3-button">PANASONIC</a>
+			 <a href="#" class="w3-bar-item w3-button">LG</a>
+			  <a href="#" class="w3-bar-item w3-button">BPL</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+	 <a onclick="myAccFuncO()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Other Devices <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccO" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Digital Cameras</a>
+      <a href="#" class="w3-bar-item w3-button">Smart Watches</a>
+      <a href="#" class="w3-bar-item w3-button">Printer</a>
+      <a href="#" class="w3-bar-item w3-button">HeadSets</a>
+	        <a href="#" class="w3-bar-item w3-button">Echo</a>
+			 <a href="#" class="w3-bar-item w3-button">Fire TV</a>
+			  <a href="#" class="w3-bar-item w3-button">Kindle</a>
+			  <a href="#" class="w3-bar-item w3-button">Mobile Accessories</a>
+			  <a href="#" class="w3-bar-item w3-button">Laptop Accessories</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Location</a>
+    
+  </div>
+  <a href="#"><span class="glyphicon glyphicon-user" style="color:#0b7dda;font-size:20px"></span><span><b> MY ACCOUNT</b></span></a> 
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Privacy Policy</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  
+  <header class="w3-container w3-xlarge" style="color:#000">
+  <ul class="nav nav-tabs">
+  <li><input type="text" class="glyphicon glyphicon-search" style="font-size:20px;width:450px;height:47px;border-width:5px" placeholder=" Search..."></li>
+  <li style="font-size:20px"><a href="#"><b>Home</b></a></li>
+  <li><a href="mycart2.html" style="font-size:20px"><b>About</b></a></li>
+  <li><a href="#"> <i class="fa fa-shopping-cart w3-margin-right"style="font-size:25px"><span class="badge badge-pill badge-info" style="color:#fff">0</span></i></a></li>
+  <li><a href="intech_login.html"><span class="glyphicon glyphicon-log-in" style="font-size:20px"></span> <b style="font-size:18px">Login</b></a></li>
+</ul>
+   
+  </header>
+<div class="w3-container w3-text-grey" id="jeans">
+    <p>Shop By Trend</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+        <p class="price">Product 1<br><b>Rs.25000</b></p>
+      </div>
+	  <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/14.jpg" style="width:100%;height:180px">
+        <p class="price">Product 2<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/12.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 3<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 4<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 5<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/13.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 6<br><b class="w3-text-red">Rs.40000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/12.jpg" style="width:100%;height:180px">
+        <p class="price">Product 7<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 8<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+        <p class="price">Product 1<br><b>Rs.25000</b></p>
+      </div>
+	  <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/14.jpg" style="width:100%;height:180px">
+        <p class="price">Product 2<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/12.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 3<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 4<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 5<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/13.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 6<br><b class="w3-text-red">Rs.40000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/12.jpg" style="width:100%;height:180px">
+        <p class="price">Product 7<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 8<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+   <br><br><br>
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo.jpg" style="width:100%;height:180px">
+        <p class="price">Product 1<br><b>Rs.25000</b></p>
+      </div>
+	  <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/14.jpg" style="width:100%;height:180px">
+        <p class="price">Product 2<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/12.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 3<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 4<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 5<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="imgs/13.jpg" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 6<br><b class="w3-text-red">Rs.40000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="imgs/12.jpg" style="width:100%;height:180px">
+        <p class="price">Product 7<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="imgs/oppo1.jpg" style="width:100%;height:180px">
+        <p class="price">Product 8<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <ul class="pagination pagination-lg" style="margin-left:36%">
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+<br>
+   <div class="w3-black w3-center w3-padding-24">Powered by <a href="#" title="Intech" target="_blank" class="w3-hover-opacity">Intech | copyright &copy; 2018, Intech Olympiad</a></div>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Accordion 
+function myAccFuncP() {
+    var x = document.getElementById("demoAccP");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncB() {
+    var y = document.getElementById("demoAccB");
+    if (y.className.indexOf("w3-show") == -1) {
+        y.className += " w3-show";
+    } else {
+        y.className = y.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncO() {
+    var x = document.getElementById("demoAccO");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+document.getElementById("myBtn").click();
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+</body>
+</html>
